@@ -1,23 +1,23 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - "Guardfile"
     - "Rakefile"
-    - "bug.rb"
+    - "node_modules/**/*"
 
   DisplayCopNames: true
 
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
-  Max: 20
+  Max: 25
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ['describe']
+  IgnoredMethods: ["describe"]
   Max: 30
-
 
 Style/Documentation:
   Enabled: false
@@ -48,7 +48,4 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
-  Enabled: false
-  
-Style/CaseEquality:
   Enabled: false
