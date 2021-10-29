@@ -1,11 +1,14 @@
 require_relative '../lib/checker'
 # 'Checker' class takes the preloaded file,
 test = Checker.new(ARGV[0])
+puts "Welcome to Ruby linters, Designed by Henryhaulka".colorize(:light_green)
 puts test.check.error_message if StandardError
 
 test.trailing_space
 test.line_error
 test.tag_error
+test.end_keyword_error
+
 if test.lint_error.empty?
   puts "File inspected #{ARGV.size}: #{(ARGV[0]).colorize(:blue)} :#{'No offense'.colorize(:green)} detected"
 else

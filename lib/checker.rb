@@ -5,7 +5,7 @@ class Checker
   def initialize(file)
     @check = FileRead.new(file)
     @lint_error = []
-    @keywords = %w[begin case class do if module unless while until]
+    @keywords = %w[begin case class do if module unless while until def]
   end
 
   def trailing_space
@@ -33,6 +33,19 @@ class Checker
         tag_error_check(/\(/, /\)/, '(', ')', 'Parenthesis')
         tag_error_check(/\{/, /\}/, '{', '}', 'Curly Brackets')
   end
+
+  def end_keyword_error
+        open_keyword = 0
+        end_keyword = 0
+      check.file_read.each do |line|
+        open_keyword += 1 if keywords.include?(line.strip.split(" ")[0])
+        end_keyword += 1 if  line.split(" ")[0] == 'end'
+     end
+     checker = open_keyword <=> end_keyword
+      lint_error << "Syntax Error: unexpected/excess end" if checker == -1
+        lint_error << "Syntax Error: Missing end" if checker == 1
+  end
+  
   
   private
   
