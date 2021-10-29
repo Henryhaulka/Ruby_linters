@@ -19,7 +19,7 @@ class Checker
   end
 
   def line_error
-    @check.file_read.each_with_index do |line, index|
+    check.file_read.each_with_index do |line, index|
       error_def_space(line, index)
       error_in_def(line, index)
       error_in_class(line, index)
@@ -28,7 +28,27 @@ class Checker
     end
   end
 
+  def tag_error
+        tag_error_check(/\[/,/\]/,'[',']', 'Square Bracket')
+        tag_error_check(/\(/, /\)/, '(', ')', 'Parenthesis')
+        tag_error_check(/\{/, /\}/, '{', '}', 'Curly Brackets')
+  end
+  
   private
+  
+  def tag_error_check(*params)
+    check.file_read.each_with_index do |line, index|
+    open_tag = []
+    close_tag = []
+    open_tag <<  params[0]  if line.match?(params[0])
+    close_tag << params[1]  if line.match?(params[1])
+    tag = open_tag <=> close_tag
+    lint_error << "line #{index+1} Syntax Error: Unexpected #{ params[2]}, or Missing corresponding #{ params[3]} #{ params[-1]}" if tag == 1
+    lint_error << "line #{index+1} Syntax Error: Unexpected #{ params[3]}, or Missing corresponding #{ params[2]} #{ params[-1]}" if tag == -1
+  end
+   end
+  
+  
   def error_in_def(line, index)
    return unless line.strip.split[0] == 'def' && check.file_read[index + 1].strip.empty?
       lint_error << "line #{index + 2}: Extra empty line detected"

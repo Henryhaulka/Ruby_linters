@@ -5,6 +5,7 @@ puts test.check.error_message if StandardError
 
 test.trailing_space
 test.line_error
+test.tag_error
 if test.lint_error.empty?
   puts "File inspected #{ARGV.size}: #{(ARGV[0]).colorize(:blue)} :#{'No offense'.colorize(:green)} detected"
 else

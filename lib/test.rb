@@ -8,7 +8,14 @@ end
 def method_name
     def
     end
-
+ [
+     ]
+     (
+         [
+             {
+         ]
+         |
     def
     end
 end
+
