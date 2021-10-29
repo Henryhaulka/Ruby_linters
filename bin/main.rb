@@ -9,7 +9,7 @@ if test.lint_error.empty?
   puts "File inspected #{ARGV.size}: #{(ARGV[0]).colorize(:blue)} :#{'No offense'.colorize(:green)} detected"
 else
   # puts "#{test.check.file.colorize(:light_blue)}: #{test.lint_error.join.colorize(:red)}"
-  test.lint_error.each do |error|
+  test.lint_error.uniq.each do |error|
     puts "#{test.check.file.colorize(:light_blue)}: #{error.colorize(:red)}"
   end
 end
