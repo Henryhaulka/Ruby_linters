@@ -14,6 +14,27 @@ This is a customized ruby linters that checks a ruby file for the follow possibl
 - Wrong Indentation
 - Missing/Unexpected tag errors
 
+## Usage
+Below are cases for each error
+# Trailing space
+~~~ruby
+#Bad code
+class ClassName
+  def initialize |
+    @name = name |
+    @greeting = greeting
+  end
+end
+
+#Good code
+class ClassName
+  def initialize
+    @name = name
+    @greeting = greeting
+  end
+end
+
+~~~
 ## Getting Started
 
 - **Clone the repo by running `git clone` https://github.com/Henryhaulka/Ruby_linters/ Or download the zip folder**
