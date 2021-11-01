@@ -3,7 +3,6 @@ require_relative '../lib/checker'
 test = Checker.new(ARGV[0])
 puts 'Welcome to Ruby linters, Designed by Henryhaulka'.colorize(:light_green)
 puts test.check.error_message if StandardError
-
 test.trailing_space
 test.line_error
 test.tag_error
