@@ -1,18 +1,20 @@
-# class ClassName
-#   def initialize
-#     @name = name]
-#     @greeting = greeting)
-#   end
-# end
+class ClassName
+  def initialize
+    @name = name]
+    @greeting = greeting)
+  end
+end
 
-# def
+def
 
-#   def method_name
-#     def
-#     end
+  def method_name
+    def
+    end
 
-#       def
-#      end
-#   end
-# end
-# end
+      def
+     end
+  end
+end
+end
+
+
