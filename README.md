@@ -35,6 +35,90 @@ class ClassName
 end
 
 ~~~
+
+# Missing/Unexpected tag errors
+~~~ruby
+#Bad code
+class ClassName
+  def initialize]
+    @name = name)
+    @greeting = greeting
+  end
+end
+
+#Good code
+class ClassName
+  def initialize
+    @name = name
+    @greeting = greeting
+  end
+end
+
+~~~
+
+# Missing/Unexpected 'end' keyword
+~~~ruby
+#Bad code
+class ClassName
+  def initialize
+    @name = name
+    @greeting = greeting
+    
+end
+
+#Good code
+class ClassName
+  def initialize
+    @name = name
+    @greeting = greeting
+  end
+end
+
+~~~
+
+# Empty/Excess Lines
+~~~ruby
+#Bad code
+class ClassName
+  def initialize
+    @name = name
+    
+   
+    @greeting = greeting
+   
+   
+   
+end
+
+#Good code
+class ClassName
+  def initialize
+    @name = name
+    @greeting = greeting
+  end
+end
+
+~~~
+
+# Wrong Indentation
+~~~ruby
+#Bad code
+class ClassName
+  def initialize
+        @name = name
+      @greeting = greeting
+    
+end
+
+#Good code
+class ClassName
+  def initialize
+    @name = name
+    @greeting = greeting
+  end
+end
+
+~~~
 ## Getting Started
 
 - **Clone the repo by running `git clone` https://github.com/Henryhaulka/Ruby_linters/ Or download the zip folder**
