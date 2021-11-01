@@ -1,5 +1,7 @@
 require_relative '../lib/checker'
-describe Checker do
+# rubocop:disable Layout/LineLength
+RSpec.describe Checker do
+  # rubocop:enable Layout/LineLength
   subject { Checker.new('./lib/test.rb') }
   describe '#trailing_space' do
     it '#checks for trailing spaces' do
