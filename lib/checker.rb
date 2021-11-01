@@ -60,7 +60,7 @@ class Checker
       valid_indent = empty_space[0].size == expectation(expected_indentation)
       if line.strip.split[0] == 'end'
         lint_error << "line:#{index + 1} IndentationWidth: Use 2 spaces for indentation" unless valid_indent
-      elsif empty_space[0].size != (expected_indentation)
+      elsif empty_space[0].size != expected_indentation
         lint_error << "line:#{index + 1} IndentationWidth: Use 2 spaces for indentation"
       end
     end
