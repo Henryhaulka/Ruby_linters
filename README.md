@@ -139,7 +139,7 @@ end
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Henryhaulka/Think_a_Number/issues/).
+Feel free to check the [issues page](https://github.com/Henryhaulka/Ruby_linters/issues/).
 
 ## Show your support
 
