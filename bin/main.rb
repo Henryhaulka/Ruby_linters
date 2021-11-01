@@ -1,7 +1,7 @@
 require_relative '../lib/checker'
 # 'Checker' class takes the preloaded file,
 test = Checker.new(ARGV[0])
-puts "Welcome to Ruby linters, Designed by Henryhaulka".colorize(:light_green)
+puts 'Welcome to Ruby linters, Designed by Henryhaulka'.colorize(:light_green)
 puts test.check.error_message if StandardError
 
 test.trailing_space
