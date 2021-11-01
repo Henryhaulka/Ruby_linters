@@ -1,5 +1,5 @@
 require_relative '../lib/checker'
-RSpec.describe Checker do
+describe Checker do
   subject { Checker.new('./lib/test.rb') }
   describe '#trailing_space' do
     it '#checks for trailing spaces' do
